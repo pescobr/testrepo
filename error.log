@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "app.py", line 42, in main
+    connect_to_database(db_host, db_port)
+  File "app.py", line 35, in connect_to_database
+    raise ConnectionRefusedError(f"Connection refused by target machine {host}:{port}")
+ConnectionRefusedError: Connection refused by target machine 10.0.4.12:5432
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "app.py", line 48, in <module>
+    main()
+  File "app.py", line 44, in main
+    raise DatabaseConnectionError(
+__main__.DatabaseConnectionError: 
+============================================================
+❌ DATABASE CONNECTION FAILURE
+============================================================
+Target Host : 10.0.4.12:5432
+Error Detail: Connection refused by target machine 10.0.4.12:5432
+------------------------------------------------------------
+💡 HOW TO FIX THIS ISSUE:
+1. Check the latest firewall on my VPS, is there any firewall blocking the port 8060.
+2. Ensure there is a firewall on my VPS that block the port 8060 for all IPs.
+3. If there is not exists, create one.
+4. Validate the firewall
+============================================================
